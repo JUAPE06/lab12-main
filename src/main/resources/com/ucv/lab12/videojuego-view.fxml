@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.ucv.lab12.controller.VideojuegoController"
+      spacing="10"
+      style="-fx-padding:15; -fx-background-color:#F5F5F5;">
+
+    <Label text="Mantenimiento de Videojuegos"
+           style="-fx-font-size:22; -fx-font-weight:bold; -fx-text-fill:#1565C0;">
+        <font><Font size="22.0"/></font>
+    </Label>
+    <Separator/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT"
+          style="-fx-background-color:#E3F2FD; -fx-padding:10; -fx-background-radius:6;">
+        <Label text="Nombre:" style="-fx-font-weight:bold;"/>
+        <TextField fx:id="txtNombre" promptText="Buscar por nombre..." prefWidth="190"/>
+        <Label text="Genero:" style="-fx-font-weight:bold;"/>
+        <TextField fx:id="txtGenero" promptText="Buscar por genero..." prefWidth="170"/>
+        <Label text="Distribuidor:" style="-fx-font-weight:bold;"/>
+        <TextField fx:id="txtDistribuidor" promptText="Buscar distribuidor..." prefWidth="190"/>
+        <Button text="Buscar" onAction="#onBuscar"
+                style="-fx-background-color:#1976D2;-fx-text-fill:white;-fx-cursor:hand;-fx-font-weight:bold;"
+                prefWidth="90"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="+ Nuevo Videojuego" onAction="#onCrear"
+                style="-fx-background-color:#388E3C;-fx-text-fill:white;-fx-cursor:hand;-fx-font-weight:bold;"
+                prefWidth="170"/>
+        <Button text="Eliminar Seleccionados" onAction="#onEliminarSeleccionados"
+                style="-fx-background-color:#C62828;-fx-text-fill:white;-fx-cursor:hand;-fx-font-weight:bold;"
+                prefWidth="170"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="lblTotal" text="Total: 0 registro(s)"
+               style="-fx-font-style:italic; -fx-text-fill:#555;"/>
+    </HBox>
+
+    <TableView fx:id="tableView" VBox.vgrow="ALWAYS" editable="true"
+               style="-fx-background-color:white; -fx-border-color:#CFD8DC; -fx-border-radius:4;">
+        <columns>
+            <TableColumn fx:id="colSeleccion" text="" prefWidth="42" maxWidth="42" resizable="false"/>
+            <TableColumn fx:id="colId" text="ID" prefWidth="55" style="-fx-alignment:CENTER;"/>
+            <TableColumn fx:id="colConsola" text="Consola" prefWidth="100"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150"/>
+            <TableColumn fx:id="colGenero" text="Genero" prefWidth="120"/>
+            <TableColumn fx:id="colClasificacion" text="Clasificacion" prefWidth="120"/>
+            <TableColumn fx:id="colDescripcion" text="Descripcion" prefWidth="170"/>
+            <TableColumn fx:id="colIdDesarrollador" text="ID Desarrollador" prefWidth="120" style="-fx-alignment:CENTER;"/>
+            <TableColumn fx:id="colDistribuidor" text="Distribuidor" prefWidth="170"/>
+            <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="155" style="-fx-alignment:CENTER;"/>
+        </columns>
+        <placeholder>
+            <Label text="No hay registros para mostrar." style="-fx-text-fill:#888;"/>
+        </placeholder>
+    </TableView>
+</VBox>

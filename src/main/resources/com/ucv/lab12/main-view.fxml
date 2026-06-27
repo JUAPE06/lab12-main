@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            style="-fx-background-color:#ECEFF1;">
+    <top>
+        <Label text="Laboratorio 12"
+               BorderPane.alignment="CENTER_LEFT"
+               style="-fx-padding:12 15 8 15; -fx-font-size:24; -fx-font-weight:bold; -fx-text-fill:#0D47A1;">
+            <font><Font size="24.0"/></font>
+        </Label>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Videojuegos">
+                    <content>
+                        <fx:include source="videojuego-view.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Distribuidores">
+                    <content>
+                        <fx:include source="distribuidor-view.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
